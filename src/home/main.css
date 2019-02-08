@@ -1,0 +1,17 @@
+.play-space {
+  margin: auto;
+  width: 200px;
+  height: 200px;
+  border: 2px solid black;
+  text-align: center;
+  font-size: 20px;
+}
+
+#roll-space{
+  margin: auto;
+  margin-top: 10px;
+  height: 30px;
+  width: 200px;
+  border: 2px solid black;
+  text-align: center;
+}

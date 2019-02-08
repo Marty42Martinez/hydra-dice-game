@@ -1,5 +1,4 @@
-//Move all stuff from index.js to here, make it a function
-//export, then import to index.js
+import createHydraSpace from './create-hydra-space.js'
 function createInputSpace() {
   const inputSpace = document.getElementById('user-input');
   
@@ -41,7 +40,7 @@ function createInputSpace() {
   playerForm.addEventListener('submit', function(event) {
     event.preventDefault();
     console.log(playerForm.playerName.value, opponentNameSelect.value);
-    // createHydraSpace(playerForm.playerName.value, opponentNameSelect.value);
+    createHydraSpace(playerForm.playerName.value, opponentNameSelect.value);
     // hydraGame();
   });
 }

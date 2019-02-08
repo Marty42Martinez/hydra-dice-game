@@ -20,9 +20,13 @@ function createHydraSpace(playerName, oppName) {
   displayOName.id = 'opponent-name';
   displayPName.textContent = playerName;
   displayOName.textContent = oppName;
+  displayPName.style.fontSize = '20px';
+  displayOName.style.fontSize = '20px';
 
   displayPRoll.id = 'player-roll';
   displayORoll.id = 'opponent-roll';
+  displayPRoll.style.fontSize = '40px';
+  displayORoll.style.fontSize = '40px';
 
   rollSpace.appendChild(rollButton);
   gameSpace.appendChild(rollSpace);

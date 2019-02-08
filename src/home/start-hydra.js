@@ -2,6 +2,8 @@
 function startHydra(playerObj, opponentObj) {
   const rollSpace = document.getElementById('roll-space');
   const messageSpace = document.getElementById('message-space');
+  const pRollDisplay = document.getElementById('player-roll');
+  const oRollDisplay = document.getElementById('opponent-roll');
   const messageDisplay = document.createElement('p');
   const diceOptions = [4,6,8,10,12,20];
 
@@ -12,9 +14,8 @@ function startHydra(playerObj, opponentObj) {
   rollButton.textContent = 'Roll!';
   rollSpace.appendChild(rollButton);
 
-  playerObj.maxRoll = rollDice(playerObj.maxRoll);
-  // opponentObj.maxRoll = rollDice(opponentObj.maxRoll);
-  opponentObj.maxRoll = 2;
+  playerObj.maxRoll = rollDice(playerObj.diceFace, pRollDisplay);
+  opponentObj.maxRoll = rollDice(opponentObj.diceFace, oRollDisplay);
   
   if(playerObj.maxRoll === opponentObj.maxRoll) {
     messageDisplay.textContent = 'Tie! Roll Again!';
@@ -32,7 +33,9 @@ function startHydra(playerObj, opponentObj) {
   // }
 }
 
-function rollDice(arg) {
-  return arg + 1;
+function rollDice(diceFace, node) {
+  const rollValue = Math.floor(Math.random() * (diceFace - 1)) + 1;
+  node.textContent = rollValue;
+  return rollValue;
 }
 export default startHydra;

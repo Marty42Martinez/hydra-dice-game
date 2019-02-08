@@ -1,4 +1,5 @@
-function createHydraSpace(playerName,oppName) {
+import startHydra from './start-hydra.js';
+function createHydraSpace(playerName, oppName) {
   const gameSpace = document.getElementById('game-space');
   const rollSpace = document.createElement('div');
   const playerSpace = document.createElement('div');
@@ -9,7 +10,10 @@ function createHydraSpace(playerName,oppName) {
   const displayPRoll = document.createElement('p');
   const displayORoll = document.createElement('p');
 
-  rollButton.textContent = 'Roll!';
+  const playerObj = createPlayer(playerName);
+  const opponentObj = createPlayer(oppName);
+
+  rollButton.textContent = 'Start Game!';
   rollSpace.id = 'roll-space';
 
   displayPName.id = 'player-name';
@@ -36,13 +40,18 @@ function createHydraSpace(playerName,oppName) {
   oppSpace.classList.add('play-space');
 
   rollButton.addEventListener('click', function() {
-    console.log('clickin is a passion')
-    //rollDice(playerObj,opponentObj);
+    rollButton.remove();
+    startHydra(playerObj, opponentObj);
   });
 
 }
 
-// function createPlayer(playerName) {
-
-// }
+function createPlayer(playerName) {
+  const gameObject = {
+    name: playerName,
+    diceFace: 4,
+    maxRoll: 0,
+  };
+  return gameObject;
+}
 export default createHydraSpace;

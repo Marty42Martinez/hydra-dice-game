@@ -9,6 +9,9 @@ function createHydraSpace(playerName, oppName) {
   const displayOName = document.createElement('p');
   const displayPRoll = document.createElement('p');
   const displayORoll = document.createElement('p');
+  const displayPDice = document.createElement('p');
+  const displayODice = document.createElement('p');
+
 
   const playerObj = createPlayer(playerName);
   const opponentObj = createPlayer(oppName);
@@ -28,13 +31,19 @@ function createHydraSpace(playerName, oppName) {
   displayPRoll.style.fontSize = '40px';
   displayORoll.style.fontSize = '40px';
 
+  displayPDice.id = 'player-dice';
+  displayODice.id = 'opponent-dice';
+
+
   rollSpace.appendChild(rollButton);
   gameSpace.appendChild(rollSpace);
   
   playerSpace.appendChild(displayPName);
   playerSpace.appendChild(displayPRoll);
+  playerSpace.appendChild(displayPDice);
   oppSpace.appendChild(displayOName);
   oppSpace.appendChild(displayORoll);
+  oppSpace.appendChild(displayODice);
 
   gameSpace.appendChild(playerSpace);
   gameSpace.appendChild(oppSpace);
@@ -55,6 +64,7 @@ function createPlayer(playerName) {
     name: playerName,
     diceFace: 4,
     maxRoll: 0,
+    lastRoll: 0
   };
   return gameObject;
 }

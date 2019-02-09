@@ -16,7 +16,7 @@ function createInputSpace() {
   opponentNameLabel.textContent = 'Select an Opponent:';
   
   const opponentNameSelect = document.createElement('select');
-  const opponentList = ['Darmak Oakhammer', 'Stor', 'Peren SlyShadow', 'Silvio Kana', 'Ipa Genjakin'];
+  const opponentList = ['Darmak Oakhammer', 'Stor Brocken', 'Peren SlyShadow', 'Silvio Kana', 'Ipa Genjakin'];
   for(let i = 0; i < opponentList.length; i++) {
     const opponentOption = document.createElement('option');
     opponentOption.value = opponentList[i];
